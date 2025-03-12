@@ -26,7 +26,7 @@ class _SlobScreenState extends State<SlobScreen> {
             Navigator.pop(context);
           },
           child: Container(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             child: Image.asset(
               'assets/backarrow.png',
               height: 24,
@@ -44,7 +44,7 @@ class _SlobScreenState extends State<SlobScreen> {
           : Padding(
         padding: const EdgeInsets.all(16.0),
         child: viewModel.slobs.isEmpty
-            ? Center(
+            ? const Center(
           child: Text(
             'Free Delivery',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -52,39 +52,43 @@ class _SlobScreenState extends State<SlobScreen> {
         )
             : SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              borderRadius: BorderRadius.circular(5),
-            ),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9, // Fixed size
             child: DataTable(
               columnSpacing: 20.0,
               border: TableBorder.all(color: Colors.black),
               columns: const [
                 DataColumn(
-                    label: Text(
-                      'SNO',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                  label: Text(
+                    'SNO',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
                 DataColumn(
-                    label: Text(
-                      'From Total',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                  label: Text(
+                    'From Total',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
                 DataColumn(
-                    label: Text(
-                      'To Total',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                  label: Text(
+                    'To Total',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
                 DataColumn(
-                    label: Text(
-                      'Charges',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                  label: Text(
+                    'Charges',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
               ],
-              rows: viewModel.slobs.map((slob) {
+              rows: viewModel.slobs.asMap().entries.map((entry) {
+                final index = entry.key; // Zero-based index
+                final slob = entry.value;
+
                 return DataRow(cells: [
-                  DataCell(Text(slob.id.toString())),
+                  DataCell(Text((index + 1).toString())), // Serial number
                   DataCell(Text(slob.fromTotal.toString())),
                   DataCell(Text(slob.toTotal.toString())),
                   DataCell(Text(slob.deliveryCharges.toString())),

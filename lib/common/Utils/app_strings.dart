@@ -1,6 +1,6 @@
 class AppStrings {
   // General
-  static const String appName = "E-com Zenx";
+  static const String appName = "Grab & Go";//
   static const String loading = "Loading...";
   static const String noInternet = "No internet connection. Please try again.";
 

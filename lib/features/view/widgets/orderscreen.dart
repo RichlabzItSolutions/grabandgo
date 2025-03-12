@@ -88,7 +88,7 @@ class _OrderTabsViewState extends State<OrderTabsView>
                 },
                 labelColor: AppColors.primaryColor,
                 unselectedLabelColor: Colors.grey,
-                indicatorColor: const Color(0xFF1A73FC),
+                indicatorColor:  AppColors.primaryColor,
                 indicatorWeight: 3,
                 tabs: const [
                   Tab(text: 'Active'),

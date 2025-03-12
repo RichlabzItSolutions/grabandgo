@@ -90,12 +90,14 @@ class VerifyOtpScreen extends StatelessWidget {
                                 // fillColor: AppColors.backgroundColor, // Optional: Uncomment to add background color
                               ),
                               onChanged: (value) {
+                                if (!context.mounted) return;
                                 if (value.isNotEmpty && index < 3) {
                                   FocusScope.of(context).nextFocus();
                                 } else if (value.isEmpty && index > 0) {
                                   FocusScope.of(context).previousFocus();
                                 }
                               },
+
                             ),
                           ),
                         ),
@@ -148,6 +150,8 @@ class VerifyOtpScreen extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () async {
                             await viewModel.verifyOtp(context);
+                            if (!context.mounted)
+                              return; // Check if the widget is still in the tree/**/
                             if (viewModel.isOtpVerified) {
                               Navigator.pushReplacementNamed(
                                   context, AppRoutes.HOME);

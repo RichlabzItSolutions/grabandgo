@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
-        android:label="E-com Zenx"
+        android:label="Grabandgo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

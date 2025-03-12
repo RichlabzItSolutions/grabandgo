@@ -43,8 +43,8 @@ class ProductCard extends StatelessWidget {
                     ? Image.network(
                         category
                             .appIcon, // Dynamically display the category icon
-                        width: 67,
-                        height: 67,
+                        width: 200,
+                        height: 100,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return const Icon(

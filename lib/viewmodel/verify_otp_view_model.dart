@@ -80,13 +80,13 @@ class VerifyOtpViewModel extends BaseViewModel {
         try {
           final user = RequestUserData(mobile: mobile);
           final result = await authService.login(user);
-          _successMessage = result;
+          // _successMessage = result;
           _errorMessage = ''; // Clear error on success
 
-          // Show success message in Snackbar
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(_successMessage ?? 'Login successful')),
-          );
+          // // Show success message in Snackbar
+          // ScaffoldMessenger.of(context).showSnackBar(
+          //   SnackBar(content: Text(_successMessage ?? 'Login successful')),
+          // );
         } catch (e) {
           setErrorMessage('Login failed. Please try again.');
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hygi_health/common/Utils/app_colors.dart';
 import 'package:provider/provider.dart';
 import '../../../viewmodel/profile_view_model.dart';
 
@@ -65,7 +66,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           // await viewModel.pickProfileImage();
                         },
                         child: CircleAvatar(
-                          backgroundColor: Colors.blue,
+                          backgroundColor:AppColors.primaryColor,
                           child: Icon(Icons.camera_alt, color: Colors.white),
                         ),
                       ),
@@ -126,8 +127,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      foregroundColor: Colors.white,
+                      backgroundColor: AppColors.primaryColor,
+                      foregroundColor:Colors.white,
                       minimumSize: const Size(double.infinity, 50),
                     ),
                   ),

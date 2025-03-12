@@ -442,11 +442,11 @@ class _HeaderSectionState extends State<HeaderSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Shop Name',
+                AppStrings.appName,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: AppColors.primaryColor,
                 ),
               ),
         locationViewModel.locations.isNotEmpty
